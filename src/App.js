@@ -7,15 +7,33 @@ import AppContext from './context/AppContext';
 
 const App = () => {
   const [ modes, setModes ] = useState(null);
+  const [ loading, setLoading ] = useState(true);
+  const [ error, setError ] = useState(null);
   const [ activeMode, setActiveMode ] = useState(0);
   const [ isStarted, start ] = useState(false);
   const [ field, setField ] = useState([]);
 
   useEffect(() => {
-    fetch('http://demo7919674.mockable.io/')
-    .then(res => res.json())
-    .then(data => setModes(data))
-    .catch(err => console.log(new Error(err)))
+    fetch('https://demo7919674.mockable.io/')
+    .then(response => {
+      if(!response.ok) {
+        console.log('STATUS: ', response.status);
+      }
+      return response.json()
+    })
+    .then(data => {
+      setModes(data);
+      setError(null);
+      console.log('Data successfully fetched!');
+    })
+    .catch(err => {
+      setError(err.message);
+      setModes(null);
+      console.log(error);
+    })
+    .finally(() => {
+      setLoading(false);
+    })
   }, [])
 
   const selectHandler = useCallback(e => {
@@ -52,6 +70,8 @@ const App = () => {
               disabled={activeMode === 0}
               >START</button>
           </div>
+          {loading && <p>Loading...</p>}
+          {error && <div>Error fetching data.</div>}
           {isStarted && 
             <Field />
           }
