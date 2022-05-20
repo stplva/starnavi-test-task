@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/starnavi-test-task/static/css/main.018d5d93.css",
+    "main.js": "/starnavi-test-task/static/js/main.6d3251fc.js",
+    "index.html": "/starnavi-test-task/index.html",
+    "main.018d5d93.css.map": "/starnavi-test-task/static/css/main.018d5d93.css.map",
+    "main.6d3251fc.js.map": "/starnavi-test-task/static/js/main.6d3251fc.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.018d5d93.css",
+    "static/js/main.6d3251fc.js"
+  ]
+}
