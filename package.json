@@ -1,6 +1,8 @@
 {
-  "name": "starnavi-hover",
+  "homepage": "https://github.com/stplva/starnavi-test-task",
+  "name": "starnavi-test-task",
   "version": "0.1.0",
+  "description": "Test task for StarNavi. Task: https://starnavi-frontend-test-task-v3.netlify.app/",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
