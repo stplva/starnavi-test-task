@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "541e27cb076be022e55d",
-    "url": "/starnavi-test-task/static/css/main.6d8362b4.chunk.css"
+    "revision": "38224b76eb52b7b488f8",
+    "url": "/starnavi-test-task/static/css/main.1cf71eb9.chunk.css"
   },
   {
-    "revision": "541e27cb076be022e55d",
-    "url": "/starnavi-test-task/static/js/main.541e27cb.chunk.js"
+    "revision": "38224b76eb52b7b488f8",
+    "url": "/starnavi-test-task/static/js/main.38224b76.chunk.js"
   },
   {
     "revision": "ff2aeb385757ea353d47",
@@ -16,7 +16,7 @@ self.__precacheManifest = [
     "url": "/starnavi-test-task/static/js/runtime~main.9c887821.js"
   },
   {
-    "revision": "f0296d631db9dd3c5431385d1177b930",
+    "revision": "e49a2629dc068aff5959275641f8bffc",
     "url": "/starnavi-test-task/index.html"
   }
 ];
