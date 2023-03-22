@@ -14,7 +14,7 @@ const App = () => {
   const [ field, setField ] = useState([]);
 
   useEffect(() => {
-    fetch('https://demo7919674.mockable.io/')
+    fetch('https://60816d9073292b0017cdd833.mockapi.io/modes')
     .then(response => {
       if(!response.ok) {
         console.log('STATUS: ', response.status);
