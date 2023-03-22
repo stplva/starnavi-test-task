@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
 import Field from './components/Field';
 import Header from './components/Header';
@@ -36,16 +36,23 @@ const App = () => {
     })
   }, [])
 
-  const selectHandler = useCallback(e => {
+  const selectHandler = (e) => {
     const mode = +e.target.value;
     setActiveMode(mode);
 
     if(mode) {
-      setField(Array(mode).fill(Array(mode).fill(false))); //generate a field
+      resetField(mode) //generate a field
     }
-  });
+  };
 
-  const startHandler = useCallback(() => start(true), []);
+  const startHandler = () => {
+    resetField(activeMode)
+    start(true)
+  };
+
+  const resetField = (mode) => setField(Array(mode).fill(Array(mode).fill(false)));
+
+  const hasHoveredFields = () => field.some((row) => row.some((col) => col))
 
   const renderOptions = ({ field, name }) => <option value={field} key={field}>{name}</option>;
 
@@ -68,7 +75,7 @@ const App = () => {
               className='start-btn'
               onClick={startHandler} 
               disabled={activeMode === 0}
-              >START</button>
+              >{isStarted & hasHoveredFields() ? 'RESET' : 'START'}</button>
           </div>
           {loading && <p>Loading...</p>}
           {error && <div>Error fetching data.</div>}
