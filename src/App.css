@@ -7,12 +7,15 @@
 .grid-wrapper {
   display: grid;
   grid-template-columns: 1fr 200px;
-  grid-template-rows: auto;
+  grid-template-rows: auto 1fr;
   grid-template-areas: 
   "header header"
   "main sidebar";
+  height: 100vh;
   width: fit-content;
+  overflow-y: hidden;
   margin: 0 auto;
+  padding-bottom: 15px;
   column-gap: 40px;
 }
 
@@ -22,6 +25,8 @@ main {
 
 aside {
   grid-area: sidebar;
+  height: 100%;
+  overflow: hidden;
 }
 
 header {
@@ -122,13 +127,17 @@ h2 {
   margin-bottom: 12px;
 }
 
+.hovered-squares {
+  height: 100%;
+}
+
 .hovered-squares__title {
   font-weight: 500;
 }
 
 .hovered-squares__list {
-  height: 500px;
-  overflow-y: auto;
+  height: calc(100% - 40px);
+  overflow-y: scroll;
   list-style: none;
   width: 100%;
 }
